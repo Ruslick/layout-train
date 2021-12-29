@@ -2,34 +2,32 @@
   font-family: "Open Sans";
   src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth\wght.ttf);
 }
-
+$bg-color: #f6f2f2;
+$active-color: #ff3f40;
+$media-color: #f5f0dd;
 body {
-  font-size: 15px;
+  font-size: calc(12px + .2vw);
   font-family: "Open Sans", sans-serif;
+
 }
 h1 {
-    font-size: 6em;
+  font-size: calc(1.1em + 7vw);
 }
 h2 {
-    font-size: 4em;
+  font-size: 2em;
 }
 h3 {
-    font-size: 2em;
+  font-size: 1.5em;
 }
 h4 {
-    font-size: 1.4em;
+  font-size: 1.1em;
 }
-
 
 //универсальные классы
 
 .container {
   width: 95%;
   margin: 0 auto;
-}
-
-.media {
-  background-color: #f5f0dd;
 }
 
 .title {
@@ -42,27 +40,27 @@ h4 {
 
 .button {
   display: inline-block;
-  background-color: #ff3f40;
+  background-color: $active-color;
   font-size: 1.2em;
   padding: 0;
   border-radius: 0.3em;
-  color: #f6f2f2;
+  color: $bg-color;
   text-align: center;
   width: 10em;
   padding: 0.5em 0;
   align-self: center;
 }
 
-.content {
+.inner-line {
+  background-color: $active-color;
+  width: 10em;
+  height: 3px;
+  border-radius: 3px;
 }
-
-.content-item {
-}
-
 //определенные классы
 
 .header {
-  background-color: #f6f2f2;
+  background-color: $bg-color;
 }
 .header__nav-menu {
   background-color: #2d2d2d;
@@ -74,12 +72,12 @@ h4 {
 .header__link {
   display: block;
   padding: 2em 2vw;
-  font-size: 0.8em;
   font-weight: 500;
-  color: #e0e0e0;
+  font-size: 0.8em;
+  color: $bg-color;
   background-color: transparent;
   &:hover {
-    background-color: #ff3f40;
+    background-color: $active-color;
   }
 }
 .header__content {
@@ -99,7 +97,7 @@ h4 {
   margin: 0.5em 0;
 }
 .header__button {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 .header__video {
   display: flex;
@@ -108,6 +106,7 @@ h4 {
   width: 100%;
   max-width: 40em;
   height: 20em;
+  background-color: $media-color;
 }
 
 .main__provide {
@@ -126,36 +125,107 @@ h4 {
 .main__provide-text {
   margin: 2em 0;
 }
+.main__provide-button {
+  background-color: #fff;
+  border: 2px solid $active-color;
+  color: $active-color;
+}
 .main__provide-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3em 1em;
+
+  align-self: center;
+  max-width: 40em;
+  margin: 2em 0;
 }
 
 .main__provide-item {
-    max-width: 15em;
+  max-width: 15em;
+}
+.main__list-title {
+  margin: 0.9em 0 0.2em 0;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    width: 85%;
-  }
+.main__line {
+  height: 2px;
+  background-color: #f1f1f1;
+  margin: 5em 0;
+}
 
+.products__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products__title {
+  text-align: center;
+}
+.products__text {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+  max-width: 70%;
+}
+.products__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.products__list-link {
+  display: block;
+  color: #2d2d2d;
+  padding: 0.5em 1vw;
+  &:hover {
+    color: $active-color;
+  }
+}
+.products__pict {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 2vw;
+  margin: 0 auto;
+}
+.products__pict-item {
+  background-color: $media-color;
+  width: 40vw;
+  height: 40vw;
+}
+@media (min-width: 1024px) {
+  .products__pict {grid-template-columns: repeat(4, 1fr);}
+  .products__pict-item {
+    width: 20vw;
+    height: 20vw;
+  }
+  .container {width: 85%;}
+  h1 {font-size: 5vw;}
+  h2 {font-size: 4vw;}
+  h3 {font-size: 3em;}
+  h4 {font-size: calc(.5em + 1vw);}
+  .text {font-size: 1.2em;}
   .content {
     flex-direction: row;
     justify-content: space-between;
   }
-
-  .content-item {
-    width: 40%;
-  }
-
+  .content-item {width: 40%;}
   .button {
     display: inline-block;
     align-self: initial;
   }
+  .header__title {margin-top: 0;}
 
-  .header__title {
-    margin-top: 0;
+  .main__line {
+    height: 2px;
+    background-color: #f1f1f1;
+    margin: 10em 0;
+  }
+  .products__list {
+    flex-direction: row;
+    padding: 2em 0;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 }
