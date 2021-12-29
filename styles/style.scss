@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth\wght.ttf);
+}
+
+body {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+    font-size: 6em;
+}
+h2 {
+    font-size: 4em;
+}
+h3 {
+    font-size: 2em;
+}
+h4 {
+    font-size: 1.4em;
+}
+
+
+//универсальные классы
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.media {
+  background-color: #f5f0dd;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.text {
+  line-height: 2;
+}
+
+.button {
+  display: inline-block;
+  background-color: #ff3f40;
+  font-size: 1.2em;
+  padding: 0;
+  border-radius: 0.3em;
+  color: #f6f2f2;
+  text-align: center;
+  width: 10em;
+  padding: 0.5em 0;
+  align-self: center;
+}
+
+.content {
+}
+
+.content-item {
+}
+
+//определенные классы
+
+.header {
+  background-color: #f6f2f2;
+}
+.header__nav-menu {
+  background-color: #2d2d2d;
+}
+.header__list {
+  display: flex;
+  justify-content: center;
+}
+.header__link {
+  display: block;
+  padding: 2em 2vw;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #e0e0e0;
+  background-color: transparent;
+  &:hover {
+    background-color: #ff3f40;
+  }
+}
+.header__content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 5em 0;
+}
+.header__organisation {
+  display: flex;
+  flex-direction: column;
+}
+.header__title {
+  margin-top: 1em;
+}
+.header__text {
+  margin: 0.5em 0;
+}
+.header__button {
+    margin-top: 2em;
+}
+.header__video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 40em;
+  height: 20em;
+}
+
+.main__provide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5em 0;
+}
+.main__provide-content {
+  display: flex;
+  flex-direction: column;
+}
+.main__provide-title {
+  line-height: 1.2;
+}
+.main__provide-text {
+  margin: 2em 0;
+}
+.main__provide-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3em 1em;
+}
+
+.main__provide-item {
+    max-width: 15em;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 85%;
+  }
+
+  .content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .content-item {
+    width: 40%;
+  }
+
+  .button {
+    display: inline-block;
+    align-self: initial;
+  }
+
+  .header__title {
+    margin-top: 0;
+  }
+}
