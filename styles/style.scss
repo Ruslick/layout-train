@@ -5,43 +5,47 @@
 $bg-color: #f6f2f2;
 $active-color: #ff3f40;
 $media-color: #f5f0dd;
+$maxWidth: 1580;
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}
+
 body {
-  font-size: calc(.5vw + .5vh);
   font-family: "Open Sans", sans-serif;
+  @include adaptiv-font(16, 14);
 }
 h1 {
-  font-size: 5em;
+  @include adaptiv-font(60, 37);
 }
 h2 {
-  font-size: 4em;
+  @include adaptiv-font(42, 30);
 }
 h3 {
-  font-size: 3em;
+  @include adaptiv-font(30, 22);
 }
 h4 {
-  font-size: 2em;
+  @include adaptiv-font(24, 18);
 }
 
 //универсальные классы
 
 .container {
-  width: 95%;
-  margin: 0 auto;
-}
-
-.title {
-  font-weight: bold;
+  margin: 0 calc(10px + (165 - 10) * ((100vw - 320px) / (1580 - 320)));
 }
 
 .text {
   line-height: 2;
-  font-size: 2flfem;
+  @include adaptiv-font(16, 13);
 }
 
 .button {
   display: inline-block;
   background-color: $active-color;
-  font-size: 1.4vw;
+  @include adaptiv-font(18, 15);
   padding: 0;
   border-radius: 0.3em;
   color: $bg-color;
@@ -73,7 +77,7 @@ h4 {
   display: block;
   padding: 2em 2vw;
   font-weight: 500;
-  font-size: 1.4vh;
+  @include adaptiv-font(14, 10);
   color: $bg-color;
   background-color: transparent;
   &:hover {
@@ -103,9 +107,10 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   max-width: 40em;
-  height: 20em;
+  max-height: 30em;
+  width: 90vw;
+  height: 70vw;
   background-color: $media-color;
 }
 
@@ -152,7 +157,10 @@ h4 {
   background-color: #f1f1f1;
   margin: 5em 0;
 }
-
+.main__products {
+  display: flex;
+  flex-direction: column;
+}
 .products__top {
   display: flex;
   flex-direction: column;
@@ -173,6 +181,7 @@ h4 {
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  margin: 1em 0;
 }
 
 .products__list-link {
@@ -184,16 +193,19 @@ h4 {
   }
 }
 .products__pict {
+  justify-self: center;
+  align-self: center;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
   gap: 2vw;
   margin: 0 auto;
 }
 .products__pict-item {
   background-color: $media-color;
-  width: 40vw;
-  height: 40vw;
+  max-width: 20em;
+  max-height: 20em;
+  width: calc(100px + (250 - 100) * ((100vw - 320px) / (1580 - 320)));
+  height: calc(100px + (250 - 100) * ((100vw - 320px) / (1580 -320)));
 }
 .main__team {
   margin: 5em 0;
@@ -202,31 +214,57 @@ h4 {
   margin: 0 0 2vh 0;
 }
 .team__main-wrapper {
+  display: flex;
+  flex-direction: column;
   margin: 5vh 0;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.team__primary-img {
+  width: calc(160px + (320 - 160) * ((100vw - 320px) / (1580 - 320)));
+  height: calc(230px + (320 - 230) * ((100vw - 320px) / (1580 - 320)));
+  background-color: $media-color;
+}
+.team__persones {
+  display: inline-grid;
+  justify-items: center;
+  gap: 2vw;
+  grid-template-columns: repeat(2, 1fr);
+}
+.team__person-item {
+  width: calc(100px + (200 - 100) * ((100vw - 320px) / (1580 - 320)));
+  height: calc(105px + (210 - 105) * ((100vw - 320px) / (1580 -320)));
+  background-color: $media_color;
+}
+.team__networks {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+
+}
+.team__network-item {
+  margin: 0 1vw;
 }
 
-@media (min-width: 1024px) {
-  .products__pict {grid-template-columns: repeat(4, 1fr);}
+@media (min-width: 980px) {
+  .products__pict {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .products__pict-item {
-    width: 20vw;
-    height: 20vw;
+    width: calc(100px + (300 - 100) * ((100vw - 320px) / (1580 - 320)));
+    height: calc(100px + (300 - 100) * ((100vw - 320px) / (1580 -320)));
   }
-  .container {width: 85%;}
-  h1 {font-size: 4.5vw;}
-  h2 {font-size: 3.7vw;}
-  h3 {font-size: 2.5vw;}
-  h4 {font-size: 1.6vw;}
-  .text {font-size: 1vw;}
-  .content {
-    flex-direction: row;
-    justify-content: space-between;
+  .content-item {
+    width: 40%;
   }
-  .content-item {width: 40%;}
   .button {
     display: inline-block;
     align-self: initial;
   }
-  .header__title {margin-top: 0;}
+  .header__title {
+    margin-top: 0;
+  }
 
   .main__line {
     height: 2px;
@@ -236,6 +274,14 @@ h4 {
   .products__list {
     flex-direction: row;
     padding: 2em 0;
-    font-size: 1.2em;
+  }
+  .team__main-wrapper {
+    flex-direction: row;
+    text-align: start;
+    height: 30vw;
+  }
+  .team__persones {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
   }
 }
