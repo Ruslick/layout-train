@@ -48,6 +48,13 @@ p {
   @include adaptiv-font(18, 15);
   text-align: center;
 }
+.input {
+  display: block;
+  border-radius: 5px;
+  border: none;
+  background-color: #e6e6e6;
+  padding: 1em ;
+}
 .item-margin {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -78,13 +85,11 @@ p {
     background-color: $active-color;
   }
 }
-
 .header__content {
   display: flex;
   flex-direction: column-reverse;
   padding: 3em 0;
 }
-
 .header__button {
   width: 13em;
   margin-left: auto;
@@ -102,13 +107,15 @@ p {
   background-color: $media-color;
 }
 
+.main__provide {
+  margin: 5em 0;
+}
 .main__provide-button {
   width: 13em;
   margin-left: auto;
   margin-right: auto;
   padding: 1em 0;
 }
-
 .main__provide-list {
   display: grid;
   gap: 2em 1em;
@@ -122,7 +129,6 @@ p {
   display: block;
   margin-top: 0.5em;
 }
-
 .main__line {
   margin: 5em 0;
   width: 100%;
@@ -130,6 +136,10 @@ p {
   background-color: #ececec;
 }
 
+.main__products {
+  display: flex;
+  flex-direction: column;
+}
 .products__list {
   text-align: center;
   @include adaptiv-font(22, 17);
@@ -141,31 +151,176 @@ p {
   &:hover {
     color: $active-color;
   }
-  .products__pict {
-    display: grid;
-  }
 }
+.products__pict {
+  display: grid;
+  align-self: center;
+  gap: 1vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.products__pict-item {
+  background-color: $media-color;
+  width: calc((100px + (300 - 100) * ((100vw - 320px) / (1580 - 320))));
+  height: calc((100px + (300 - 100) * ((100vw - 320px) / (1580 - 320))));
+}
+
 .inner-line {
   width: calc((100px + (130 - 100) * ((100vw - 320px) / (1580 - 320))));
   height: calc((2px + (2.7 - 2) * ((100vw - 320px) / (1580 - 320))));
-  margin: 0 auto;
   background-color: $active-color;
+  display: inline-block;
 }
 
+.main__team {
+  margin: 5em 0;
+}
 .team__networks {
   display: flex;
   justify-content: center;
 }
-
 .team__network-item {
   margin-left: 1vw;
   margin-right: 1vw;
 }
+.team__main-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team__primary-img {
+  background-color: $media-color;
+  width: calc((220px + (320 - 220) * ((100vw - 320px) / (1580 - 320))));
+  height: calc((360px + (460 - 360) * ((100vw - 320px) / (1580 - 320))));
+  margin: 0 2vw;
+}
+.team__description {
+  text-align: center;
+}
+.team__description-text {
+  max-width: 40em;
+}
+.team__persones {
+  display: grid;
+  margin: 0 auto;
+  gap: 3vw 1vw;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  justify-items: center;
+}
+.team__person-item {
+  position: relative;
+  background-color: $media-color;
+  width: calc((100px + (180 - 100) * ((100vw - 320px) / (1580 - 320))));
+  height: calc((100px + (180 - 100) * ((100vw - 320px) / (1580 - 320))));
+}
+.team__person-link {
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(49, 48, 48, .7);
+}
+.main__mail {
+  background-color: #f5f0dd;
+  text-align: center;
+  padding: 5em 0;
+}
+.mail__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mail__input {
+  display: block;
+  margin-right: 2vw;
+  border-radius: 5px;
+  border: none;
+  width: calc(300px + (500 - 300) * ((100vw - 320px) / (1580 - 320)));
+  height: 4em;
+  padding: 0 1em;
+}
+.mail__title {
+  color: white;
+}
+.mail__text {
+  color: white;
+}
+.mail__button {
+  margin: 1em 0;
+  padding: 1em 0;
+  width: 13em;
+}
+
+.touch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+
+}
+.touch__top {
+  grid-column: 1 / 3;
+  margin-top: 5em;
+}
+.touch__info {
+  max-width: 570px;
+  background-color: #313030;
+  color: #ffffff;
+  padding: 1em 3em;
+  grid-area: 3 / 1 / 4 / 3;
+  justify-self: center;
+}
+.touch__input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 5em);
+  gap: 1vw;
+  grid-area: 2 / 1 / 3 / 3;
+  justify-self: center;
+  width: 70%;
+}
+.touch__input-1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.touch__input-2 {
+  grid-area: 2 / 1 / 3 / 3;
+}
+.touch__input-3 {
+  resize: none;
+  grid-area: 3 / 1 / 7 / 3;
+}
+.touch__button {
+  padding-top: 1.5em;
+  grid-area: 7 / 1 / 8 / 3;
+}
+.footer {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #313030;
+  padding: 3em 5em;
+}
+.footer__list {
+  display: flex;
+}
+.footer__text {
+  color: $bg-color;
+}
+.footer__item {
+  padding: 1vw 1vw;
+}
+
 
 @media (min-width: 1023px) {
   .header__content {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
   }
   .header__organisation,
   .header__video {
@@ -182,12 +337,18 @@ p {
     justify-content: space-between;
     padding: 5em 0;
   }
-  .main__provide-content, 
+  .main__provide-content,
   .main__provide-list {
     max-width: 45%;
   }
   .main__list-title {
-    margin: 1em 0 .5em 0;
+    margin: 1em 0 0.5em 0;
+  }
+  .products__top {
+    text-align: center;
+  }
+  .products__pict {
+    grid-template-columns: repeat(4, 1fr);
   }
   .products__list {
     display: flex;
@@ -197,4 +358,49 @@ p {
   .products__list-link {
     margin: 2em 2vw 1em 2vw;
   }
+  .products__title {
+    margin-bottom: 0;
+  }
+  .products__text {
+    margin-top: 0;
+  }
+  .team__networks {
+    justify-content: start;
+    margin-top: 3vw;
+  }
+  .team__main-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: initial;
+  }
+  .team__title {
+    margin-bottom: 0;
+  }
+  .team__description {
+    text-align: start;
+  }
+  .team__persones {
+  position: absolute;
+  bottom: 0;
+  grid-template-columns: repeat(4, 1fr);
+  }
+  .mail__input-wrapper {
+    flex-direction: row;
+  }
+  .mail__button {
+    margin: 0;
+  }
+  .touch__input-wrapper {
+    justify-self: self-start;
+    grid-area: 2 / 1 / 3 / 2;    
+    width: 100%;
+  }
+  .touch__info {
+    justify-self: self-end;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+    .touch__input-1 { grid-area: 1 / 1 / 2 / 2; }
+    .touch__input-2 { grid-area: 1 / 2 / 2 / 3; }
+    .touch__input-3 { grid-area: 2 / 1 / 7 / 3; }
+    .touch__button { grid-area: 7 / 1 / 8 / 3; }
 }
