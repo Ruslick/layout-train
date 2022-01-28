@@ -2,17 +2,15 @@
 <html lang="ru">
 
 <head>
-	<title>Главная</title>
+	<title>CoronaGo</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220128194553">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220128234541">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -33,9 +31,9 @@
 				</section>
 				<section class="header__main">
 					<div class="header__content content-header">
-						<h1 class="content-header__title title-primary">Take care of yours family&#8217s health.</h1>
+						<h1 class="content-header__title title-primary">Take care of yours family&#8217s <span class="header__title-add-color">health.</span></h1>
 						<p class="content-header__text text">All in one destination for COVID-19 health queries. Consult 10,000+ health workers about your concerns.</p>
-						<button class="content-header__button button">GET STARTED</button>
+						<button type="submit" class="content-header__button button">GET STARTED</button>
 					</div>
 					<div class="header__picture">
 						<img class="header__picture-inner" src="img/headerPicture2.svg" alt="">
@@ -50,9 +48,9 @@
 				</section>
 			</div>
 		</header>
-		<main class="main">
-			<main class="main__container">
-				<section class="main__stay-save stay-save">
+		<section class="stay-save">
+			<div class="stay-save__container">
+				<div class="stay-save__wrapper">
 					<div class="stay-save__left-content">
 						<div class="stay-save__brick-1 brick"></div>
 						<div class="stay-save__brick-2 brick"></div>
@@ -60,8 +58,8 @@
 						<picture><source srcset="img/phonePicture.webp" type="image/webp"><img class="stay-save__img" src="img/phonePicture.png" alt="phone" /></picture>
 					</div>
 					<div class="stay-save__right-content">
-						<h1 class="stay-save__title title">
-							Stay safe with Go<span class="stay-save__">Corona.</span>
+						<h1 class="stay-save__title title-primary">
+							Stay safe with Go<span class="stay-save__title-add-color">Corona.</span>
 						</h1>
 						<p class="stay-save__text text">
 							24x7 Support and user friendly mobile platform to bring
@@ -70,8 +68,13 @@
 						</p>
 						<button class="stay-save__button button">Features</button>
 					</div>
-				</section>
-				<section class="main__experts experts">
+				</div>
+			</div>
+		</section>
+
+		<section class="experts">
+			<div class="experts__container">
+				<div class="experts__wrapper">
 					<div class="experts__info-wrapper">
 						<div class="experts__brick-1 brick"></div>
 						<div class="experts__brick-2 brick"></div>
@@ -95,7 +98,7 @@
 					</div>
 					<div class="experts__content-wrapper">
 						<div class="experts__left-content">
-							<h1 class="experts__title title">Talk to <span class="experts__title-special-color">experts.</span></h1>
+							<h1 class="experts__title title-primary">Talk to <span class="experts__title-add-color">experts.</span></h1>
 							<p class="experts__text text">
 								Book appointments or submit queries into thousands of forums
 								concerning health issues and prevention against noval Corona
@@ -104,31 +107,52 @@
 							<button type="submit" class="experts__button button">Features</button>
 						</div>
 						<div class="experts__right-content">
-							<img data-src="img/experts-picture.svg" alt="">
+							<img src="img/experts-picture.svg" alt="expertPicture">
 						</div>
 					</div>
-				</section>
-			</main>
-		</main>
-
+				</div>
+			</div>
+		</section>
 		<footer class="footer">
 			<div class="footer__container">
+				<div class="footer__wrapper">
+					<div class="footer__top">
+						<div class="footer__title title-primary">
+							<span class="footer__title-add-color">Healthcare</span> at your Fingertips.
+						</div>
+						<div class="footer__text text">
+							Bringing premium healthcare features to your fingertips. User
+							friendly mobile platform to bring healthcare to your fingertips.
+							Signup and be a part of the new health culture.
+						</div>
+					</div>
+					<ul class="footer__list">
+						<li class="footer__item">
+							<img src="img/footerMan.svg" alt="man">
+							<h6 class="footer__list-title">Symptom Checker</h6>
+							<p class="footer__list-text">Check if you are infected by COVID-19 with our Symptom Checker</p>
+						</li>
+						<li class="footer__item">
+							<img src="img/footerDoctor.svg" alt="man">
+							<h6 class="footer__list-title">24x7 Medical support</h6>
+							<p class="footer__list-text">Consult with 10,000+ health workers about your concerns.</p>
+						</li>
+						<li class="footer__item">
+							<img src="img/footerHeart.svg" alt="man">
+							<h6 class="footer__list-title">Conditions</h6>
+							<p class="footer__list-text">Bringing premium healthcare features to your fingertips.</p>
+						</li>
+					</ul>
+					<section class="footer__apps">
+						<a href="#"><picture><source srcset="img/footerGooglePlay.webp" type="image/webp"><img class="footer__apps-img" src="img/footerGooglePlay.png" alt=""></picture></a>
+						<a href="#"><picture><source srcset="img/footerAppStore.webp" type="image/webp"><img class="footer__apps-img" src="img/footerAppStore.png" alt=""></picture></a>
+					</section>
+				</div>
 			</div>
 		</footer>
-	</div>
-	<!-- 
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
-		</div>
-	</div>
-</div>
- -->
 
-	<script src="js/app.min.js?_v=20220128194553"></script>
+	</div>
+	<script src="js/app.min.js?_v=20220128234541"></script>
 </body>
 
 </html>
