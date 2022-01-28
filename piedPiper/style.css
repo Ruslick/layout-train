@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary_color: #007765;
+  --add_color: #eeeeee;
+}
+
+body {
+  background: #fff;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 920px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 10px;
+    max-width: 520px;
+  }
+}
+.header {
+  background-color: var(--primary_color);
+
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.header__navBar { 
+  height: 3em;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.navBar__logo {
+  image-rendering: pixelated;
+}
+
+.navBar__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar__item {
+  list-style-type: none;
+  padding: 0.5em;
+}
+
+.navBar__item::before {
+  content: "|";
+  padding-right: 1em;
+  color: white;
+}
+
+.navBar__item:first-child::before {
+  display: none;
+}
+
+.navBar__item a {
+  text-decoration: none;
+  color: white;
+}
+
+.header__jumbotron {
+  height: 70vh;
+  background-image: url(img/bg_image.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__inscription {
+  font-size: 6em;
+  color: white;
+}
+
+.main__theProblem {
+  background-color: var(--add_color);
+}
+
+.main__content {
+  padding: 2em 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  color: var(--primary_color);
+  line-height: 1.2;
+}
+
+.text {
+  line-height: 1.3;
+  display: block;
+}
+
+.signboard {
+  background-image: url(img/hiro_bg_image.png);
+  background-size: 100% 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.signboard__text {
+  padding: 0 7em;
+  color: white;
+  font-style: italic;
+  font-size: 2em;
+}
+
+.main__ppc {
+  padding: 3em 0;
+}
+
+.main__wrapper {
+  padding-top: 0.5em;
+}
+
+.main__logo {
+  height: 3.5em;
+  float: left;
+  padding-right: 1em;
+}
+
+.main__theTeam {
+  padding: 2em 0;
+}
+
+.theTeam {
+  background-color: var(--add_color);
+}
+
+.theTeam__humansList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 2em;
+  padding-top: 2em;
+}
+
+.theTeam__humansItem {
+  list-style-type: none;
+  display: block;
+  flex-direction: column;
+  text-align: center;
+}
+
+.theTeam__img {
+  height: 5em;
+  width: 5em;
+}
+
+.theTeam__name {
+  margin-top: 0.2em;
+  display: block;
+  font-size: 0.7em;
+}
+
+.theTeam__position {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.footer {
+  background: #000;
+  text-align: center;
+  padding: 1em 5em;
+}
+
+.footer__text {
+  color: white;
+  font-size: 0.5em;
+  line-height: 1.5;
+  display: block;
+}
